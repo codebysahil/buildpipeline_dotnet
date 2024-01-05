@@ -46,5 +46,9 @@ steps:
     buildConfiguration: 'Release'
   
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
+  displayName: 'Publish Artifact: mock'
   condition: succeeded()
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'mock'
+    publishLocation: 'Container'
